@@ -1,0 +1,55 @@
+def generate_login(first_name, last_name, bcit_id):
+    first_name = input(" enter your first name: ")
+    last_name = input(" enter your last name: ")
+    bcit_id = input(" enter your BCIT ID: ")
+    first_name = first_name[:3]
+    last_name = last_name[:3]
+    bcit_id = bcit_id[-3:]
+    first_name = first_name.capitalize()
+    last_name = last_name.capitalize()
+
+    return first_name + last_name + bcit_id
+
+
+def change_password():
+    while True:
+        password = input("Enter Password")
+
+        if len(password) >= 7:
+            has_digit = False
+            has_upper = False
+            has_lower = False
+            has_special = False
+            for char in password:
+                if char.isdigit():
+                    has_digit = True
+                elif char.islower():
+                    has_lower = True
+                elif char.isupper():
+                    has_upper = True
+                else:
+                    has_special = True
+
+            if has_digit and has_lower and has_upper and not has_special:
+                print("Password Changed")
+                return password
+            if has_digit == False:
+                print("Password needs a digit")
+            if has_upper == False:
+                print("Password needs an upper case letter")
+            if has_lower == False:
+                print("Password needs a lower case letter")
+            if has_special == True:
+                print("No special characters")
+
+        else:
+            print("Password is not long enough")
+
+
+def main():
+    generate_login("joHN", "dOe", "a123456")
+    # change_password()
+
+
+if __name__ == "__main__":
+    main()

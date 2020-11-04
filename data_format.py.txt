@@ -1,0 +1,28 @@
+def get_book_info(book_title, book_ISBN, book_author_last_name, book_publisher, year_published, book_price):
+    book_title = input("Enter book title: ")
+    book_ISBN = input("Enter book ISBN: ")
+    book_author_last_name = input("Enter book author last name: ")
+    book_publisher = input("Enter book publisher: ")
+    year_published = input("Enter year published: ")
+    book_price = input("Enter book price: ")
+
+    book_title = book_title[:3]
+    book_ISBN = book_ISBN[0:5]
+    book_author_last_name = book_author_last_name[0:5]
+    book_publisher = book_publisher[0:5]
+    year_published = year_published[3:5]
+    book_price = book_price[1:5]
+
+
+
+    return book_title + book_ISBN + book_author_last_name + book_publisher + year_published + book_price
+
+
+
+
+def main():
+    get_book_info()
+
+
+    if __name__ == "__main__":
+        main()
